@@ -18,8 +18,8 @@ import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
-    maxWidth: 560,
+    // width: '100%',
+    // maxWidth: 560,
     // backgroundColor:"#B1EBF9",
     margin:5,
     align:"center"
@@ -58,7 +58,7 @@ function Today(props) {
               <ScheduleIcon style={{fontSize:28}}/>
             </IconButton>
             <ListItemText
-            primary="started date"
+            primary="Date"
             secondary={value.date} />
             <ListItemText
               primary={value.title}

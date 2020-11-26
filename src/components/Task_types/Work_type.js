@@ -16,8 +16,8 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
-    maxWidth: 560,
+    // width: '100%',
+    // maxWidth: 560,
     backgroundColor: theme.palette.background.paper,
     margin:5,
     align:"center"
@@ -30,18 +30,14 @@ const useStyles = makeStyles((theme) => ({
 
 function Work_type(props) {
   const classes = useStyles();
-  const [strike_line, setstrike_line] = React.useState(false)
-  const [idstate, setidstate] = React.useState('')
   const Tasktype = "Work"
   const { enqueueSnackbar } = useSnackbar();
 
 
   console.log(props.displayData,"ooooooooooooo")
   const handleDelete_task = (id)=>{
-    setstrike_line(true)
-    setidstate(id)
     console.log(id,"iiiiiiiiiiiiiiiiiiii");
-    axios.get(`http://localhost:2020/task/delete/${id}/${localStorage.getItem('login email')}/${Tasktype}`)
+    axios.get(`http://localhost:2020/task/delete/taskType/${id}/${localStorage.getItem('login email')}/${Tasktype}`)
     .then(res=>{
         console.log(res.data,"dddddddddddddddddddddd")
         props.setTaskTypeAction(res.data)
@@ -63,15 +59,12 @@ function Work_type(props) {
     {props.displayData.length !==0 ? props.displayData.map((value,index) => {
         return (
           <ListItem key={index} 
-
-          // onClick={handleToggle(value.name)}
-          className={strike_line && idstate===value.id ? classes.strikeline :null } 
           > 
             <IconButton edge="start" aria-label="date" >
               <ScheduleIcon style={{fontSize:28}}/>
             </IconButton>
             <ListItemText
-            primary="started date"
+            primary="Date"
             secondary={value.date} />
             <ListItemText
               primary={value.title}

@@ -8,7 +8,10 @@ import { SnackbarProvider } from 'notistack';
 
 const useStyles = makeStyles ((theme)=>({
 Todolist:{
-    margin:theme.spacing(1)
+    margin:theme.spacing(1),
+    minHeight:461,
+    // minWidth:461,
+
 }
 }))
 
@@ -17,13 +20,13 @@ const Todo =()=> {
 
     return (
         <div >
-            <Menubar /> 
-        <div className={classes.Todolist} style={{height:461}}>
+            <Menubar />
+        <div className={classes.Todolist}>
             <Grid container spacing={3}>     
-                <Grid item xs={12} sm={6} >
+                <Grid item xs={12} sm={6}>
                 <TodoList />
                 </Grid>
-                <Grid item xs={12} sm={6} >
+                <Grid item xs={12} sm={6}>
                 <SnackbarProvider maxSnack={3}>
                 <Todostore />
                 </SnackbarProvider>

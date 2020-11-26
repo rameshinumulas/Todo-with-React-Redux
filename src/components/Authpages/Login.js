@@ -88,6 +88,7 @@ const useStyles = makeStyles({
           .then(responce=>{
             console.log(responce,"posting data....");  
             seterrorfromBackend(responce.data.msg)
+            alert(responce.data.msg)
           })
           .catch(error=>{
             console.log(error,"errorrr...");  
@@ -102,18 +103,18 @@ const useStyles = makeStyles({
             <Grid container >
             <Grid item>
                 <h1 className={classes.title}>Daily Plan Tracker </h1>
-                <p className={classes.sideFont}>It helps you to track your Dialy shedule and tasks here... </p>
+                <p className={classes.sideFont}>It helps you to track your Daily schedule and tasks here... </p>
                 </Grid>
             <Grid item>
             <Card className={classes.root} variant="outlined">
               <p style={{color:"red"}}>{errorfromBackend}</p>
                 <CardContent >
                     <FormControl fullWidth variant="outlined">
-                        <InputLabel htmlFor="component-outlined" style={{fontFamily: "Grandstander cursive",fontSize:20}}>Email address or phone number</InputLabel>
+                        <InputLabel htmlFor="component-outlined" style={{fontFamily: "Grandstander cursive",fontSize:20}}>Email address</InputLabel>
                         <OutlinedInput
                         required
                             id="component-outlined"
-                            label="Email address or phone number"
+                            label="Email address "
                             value={Email}
                             onChange={(e)=>setEmail(e.target.value)}
                             labelWidth={60}
@@ -164,7 +165,7 @@ const useStyles = makeStyles({
           </Grid>
         </Container>
             {addNewcontact ? <Redirect to ="/signup" /> : null }
-            {errorfromBackend === "successfully login" ? <Redirect to = "/NewTask" /> : null}
+            {errorfromBackend === "login successfull !!" ? <Redirect to = "/NewTask" /> : null}
 
       </div>
     )

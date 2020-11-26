@@ -1,0 +1,142 @@
+[
+    {
+        "firstName": "ramesh",
+        "email": "ramesh@",
+        "password": "111111",
+        "Tasks": []
+    },
+    {
+        "firstName": "Sri.siri",
+        "email": "sri.siri@gmail.com",
+        "password": "siri.7788",
+        "Tasks": []
+    },
+    {
+        "firstName": "friendship",
+        "email": "friend@gmail.com",
+        "password": "siri.7788",
+        "Tasks": []
+    },
+    {
+        "firstName": "ramarao",
+        "email": "ramarao@gmail.com",
+        "password": "siri.7788",
+        "Tasks": [
+            {
+                "id": "089c24b5-7905-4eec-8de5-8da28049a145",
+                "date": "Sat Nov 07 2020",
+                "title": "three",
+                "task": "three",
+                "taskType": "Planned"
+            },
+            {
+                "id": "67d23e80-393b-4e18-945b-114831f86a3e",
+                "date": "Sat Nov 07 2020",
+                "title": "three",
+                "task": "three",
+                "taskType": "Planned"
+            },
+            {
+                "id": "c49eb8a6-07fd-400b-9fe6-0396bf1ea5f9",
+                "date": "Sat Nov 07 2020",
+                "title": "six",
+                "task": "six",
+                "taskType": "Work"
+            }
+        ]
+    },
+    {
+        "firstName": "peter kumar",
+        "email": "peterkumar@gmail.com",
+        "password": "12345678",
+        "Tasks": [
+            {
+                "id": "9acd0f73-ee4a-4689-9db3-94350969bb62",
+                "date": "Fri Nov 06 2020",
+                "title": "new tasks are going",
+                "task": "new task",
+                "taskType": "Personal"
+            }
+        ]
+    },
+    {
+        "firstName": "aakash",
+        "email": "akash@gmail.com",
+        "password": "12345678",
+        "Tasks": [
+            {
+                "id": "c648eb1d-8251-452a-b8b3-0cd3b0f7dfda",
+                "date": "Fri Nov 06 2020",
+                "title": "g",
+                "task": "g",
+                "taskType": "Planned"
+            }
+        ]
+    },
+    {
+        "firstName": "banner",
+        "email": "banner@gmail.com",
+        "password": "12345678",
+        "Tasks": []
+    },
+    {
+        "firstName": "jamkush",
+        "email": "jamkush@gmail.com",
+        "password": "siri.7788",
+        "Tasks": [
+            {
+                "id": "d716dcdb-c6dc-4bfd-ab73-0c2fa1a4f180",
+                "date": "Sat Nov 07 2020",
+                "title": "task",
+                "task": "checking",
+                "taskType": "Planned"
+            }
+        ]
+    },
+    {
+        "firstName": "ajith",
+        "email": "ajith@12gmail.com",
+        "password": "11111111",
+        "Tasks": [
+            {
+                "id": "5b68c96e-c2b3-4327-a253-30056a9f2730",
+                "date": "Sun Nov 08 2020",
+                "title": "aa",
+                "task": "aa",
+                "taskType": "Work"
+            }
+        ]
+    },
+    {
+        "firstName": "umesh",
+        "email": "umesh@gmail.com",
+        "password": "12345678",
+        "Tasks": [
+            {
+                "id": "f470bae6-d313-4e04-b17b-6c9a397c99c9",
+                "date": "Sun Nov 08 2020",
+                "title": "second task",
+                "task": "this is my new task",
+                "taskType": "Planned"
+            }
+        ]
+    },
+    {
+        "firstName": "kumar",
+        "email": "email@gmail.com",
+        "password": "12345678",
+        "Tasks": []
+    },
+    {
+        "firstName": "newone",
+        "email": "newone@gmaul.com",
+        "password": "12345678",
+        "Tasks": []
+    },
+    {
+        "firstName": "newone",
+        "email": "newone@gmail.com",
+        "password": "12345678",
+        "Tasks": []
+    }
+]

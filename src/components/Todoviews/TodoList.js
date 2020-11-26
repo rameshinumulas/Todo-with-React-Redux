@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, Paper, Typography} from '@material-ui/core';
+import {Container, Grid, Paper, Typography} from '@material-ui/core';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -14,13 +14,13 @@ import { connect } from 'react-redux';
 
 const useStyles = makeStyles((theme)=>({
     Gridspacing:{
-        // margin: theme.spacing(2),
+        margin: theme.spacing(2),
         alignContent:"flex-end",
         borderRadius:20,
     },
     PaperStyle:{
-        width: theme.spacing(25),
-        height: theme.spacing(8),
+        // width: theme.spacing(20),
+        // height: theme.spacing(8),
     }
 }));
 
@@ -40,7 +40,7 @@ function TodoList(props) {
         axios.get(`http://localhost:2020/task/get/todaytasks/${localStorage.getItem('login email')}`)
             .then(res=>{
                 console.log(res.data,"Today................")
-                props.setBackendData(res.data)
+                props.setBackendData(res.data[0])
             })
             .catch(err=>{
                 console.log(err,"error from backend....")
@@ -48,6 +48,7 @@ function TodoList(props) {
 
         axios.get(`http://localhost:2020/task/get/${item}/tasks/${localStorage.getItem('login email')}`)
             .then(res=>{
+                console.log(res.data,"typessssssss................")
                 props.setTaskTypeAction(res.data)
             })
             .catch(err=>{
@@ -56,7 +57,8 @@ function TodoList(props) {
     }
     return (
         <div>
-            <Grid container justify="space-evenly">
+            {/* <Grid container justify="space-evenly"> */}
+            <Container>
                 <Grid className={classes.Gridspacing}>
                     {todolistDetails.todoList.map((eachitem,index)=>
                         <div key={index}>
@@ -83,8 +85,9 @@ function TodoList(props) {
                             </Link>
                             <br />
                         </div>)} 
-                </Grid>              
-            </Grid>
+                </Grid>    
+                </Container>          
+            {/* </Grid> */}
         </div>
     )
 }

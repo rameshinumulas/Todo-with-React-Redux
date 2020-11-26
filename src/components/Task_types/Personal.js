@@ -15,8 +15,8 @@ import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
-    maxWidth: 560,
+    // width: '100%',
+    // maxWidth: 560,
     backgroundColor: theme.palette.background.paper,
     margin:5,
     align:"center"
@@ -34,8 +34,9 @@ function Personal(props) {
 
 
     const handleDelete_task = (id)=>{
-        axios.get(`http://localhost:2020/task/delete/${id}/${localStorage.getItem('login email')}/${Tasktype}`)
+        axios.get(`http://localhost:2020/task/delete/taskType/${id}/${localStorage.getItem('login email')}/${Tasktype}`)
         .then(res=>{
+          console.log(res.data,"new filterrrrrrrrrrrr");
             props.setTaskTypeAction(res.data)
         })
         .catch(err=>{
@@ -58,7 +59,7 @@ function Personal(props) {
                     <ScheduleIcon style={{fontSize:28}}/>
                 </IconButton>
             <ListItemText
-                primary="started date"
+                primary="Date"
                 secondary={value.date} />
             <ListItemText
                 primary={value.title}

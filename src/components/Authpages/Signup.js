@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 // import '../App.css';
-import {Redirect} from 'react-router-dom';
+import {Redirect,Link} from 'react-router-dom';
 import axios from 'axios';
 
 import OutlinedInput from '@material-ui/core/OutlinedInput';
@@ -88,11 +88,30 @@ const Signup=()=> {
             const password = Password;
             const data = {
               firstName,email,password
-            }            
-            axios.post("http://localhost:2020/task/signup",data)
+            } 
+            // const config = {
+            //   method: 'post',
+            //   url: '/task/signup',
+            //   data: data
+            // };
+        
+            // axios(config)
+            //   .then((response) => {
+            //     console.log(response.data);
+            //     setsignupMsgfromBackend(response.data.msg) 
+            //   })
+            //   .catch((error) => {
+            //     console.log(error);
+            //   });
+          
+            
+            // const proxyurl = "https://cors-anywhere.herokuapp.com/";        
+            axios.post(`http://localhost:2020/task/signup`,data)
             .then(responce=>
             {
               setsignupMsgfromBackend(responce.data.msg) 
+              console.log(responce.data.msg,"o");
+              alert(responce.data.msg)
             })
             .catch(error=>
             {
@@ -176,6 +195,7 @@ const Signup=()=> {
                     </CardActions>
                     <div className="line">
                     <hr />
+                    <p>already have account<Link to ="/">signin</Link></p>
                     </div>
                   
                   </Card>
@@ -184,7 +204,7 @@ const Signup=()=> {
               </Grid>
           </Container>
           
-          {signupMsgfromBackend === "succuessfully your account created" ?
+          {signupMsgfromBackend === "Your account created succuessfully!!!!..." ?
            <Redirect to ="/" />:null}
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Divider, Grid, TextField, } from '@material-ui/core';
+import {Button, Container, Divider, Grid, TextField, } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import {Card,
         CardActions,
@@ -16,7 +16,7 @@ import { useSnackbar } from 'notistack';
 
 const useStyles = makeStyles((theme)=>({
     root: {
-      minWidth: 445,
+    //   minWidth: 445,
     fontFamily:"Helvetica,Arial,sans-serif",
 
     },
@@ -34,12 +34,9 @@ const useStyles = makeStyles((theme)=>({
 
 function Todostore(props) {
     const classes = useStyles();
-    const { enqueueSnackbar } = useSnackbar();
-
-    
+    const { enqueueSnackbar } = useSnackbar();    
     const [open, setOpen] = React.useState(false);
     const HandleButton = (variant)=>{
-        
         const data = {
             task:props.textField,
             title:props.taskTitle,
@@ -49,8 +46,8 @@ function Todostore(props) {
         console.log(data,"frontend_data")
         axios.post("http://localhost:2020/task/usertasks",[localStorage.getItem("login email"),data])
         .then(res=>{
-            console.log(res.data.msg,"backend responce.....")
-            props.setBackendData(res.data)
+            console.log(res.data.tasks.Tasks,"backend responce.....")
+            props.setBackendData(res.data.tasks.Tasks)
             props.setbackendError(res.data.msg)
             if(res.data.msg){
                 alert(res.data.msg)
@@ -80,7 +77,8 @@ function Todostore(props) {
     const present_date=today.toDateString()
     return (
         <div>
-            <Grid container>
+            {/* <Grid container> */}
+            <Container>
                 <Card className={classes.root} variant="outlined">
                     <CardHeader
                         avatar={
@@ -139,7 +137,8 @@ function Todostore(props) {
                         onClick={()=>HandleButton("success")}>Add Task</Button>
                     </CardActions>
                     </Card>
-                </Grid>
+                    </Container>
+                {/* </Grid> */}
                 
             </div>
         )
